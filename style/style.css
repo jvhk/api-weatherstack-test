@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid{
+    margin-top: auto;
+    margin-bottom: auto;
+    display: grid;
+}
+
+#button{
+    margin-bottom: 20px;
+}
