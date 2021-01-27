@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', function(req, res){ 
-    res.render('/views/index');
+    res.render('index');
 });
 
 
@@ -20,7 +20,7 @@ app.listen(3000, function(){
 
 //config de server fim
 
-/*
+
 const axios = require('axios');
 
 const params = {
@@ -47,4 +47,3 @@ axios.get(url)
   });
 
 
-*/
