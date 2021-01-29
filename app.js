@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 
+//config de server
 
 //config de server fim
 
@@ -14,8 +15,8 @@ const params = {
 }
 
 
-console.log(params.access_key);
-console.log(params.query);
+//console.log(params.access_key);
+//console.log(params.query);
 
 
 const url = `http://api.weatherstack.com/current?access_key=${params.access_key}&query=${params.query}`;
@@ -29,6 +30,7 @@ axios.get(url)
     console.log(apiResponse.location.region);
 
     //config de server
+    
     const express = require('express');
     const path = require('path');
     const bodyParser = require('body-parser')
@@ -44,6 +46,11 @@ axios.get(url)
 
     app.get('/', function(req, res){ 
         res.render('index', {apiResponse : apiResponse}); //passando os dados capturados na API pro front
+        
+        app.post('/', function (req,res) { 
+            let cidade = req.body.cidade;
+            console.log("cidade pelo body parser: " + cidade);
+        })
     });
 
 

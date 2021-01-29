@@ -11,21 +11,21 @@
 </head>
 <body>
     <div id="container" class="container-sm border border-secondary">
-        <form class="d-flex flex-column" action="">
+        <form class="d-flex flex-column" action="/views/index.ejs" method="post">
             <div>
                 <p class="text-center fs-1">Consulte informações da sua cidade</p>
             </div>
-            <div class="mb-5">
+            <div id="cidade" class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label">Cidade</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="cidade" placeholder="Bambuí">
             </div>
-            <div class="mb-5">
+            <div id="pais" class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label">País</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="pais" placeholder="Brazil">
             </div>
 
-            <div id="printer"> 
-                <%= apiResponse.location.region  %> 
+            <div id="printer" class="align-self-center"> 
+                <p><%= apiResponse.location.region  %> </p>
             </div>
 
             <div id="button" class="align-self-center">
