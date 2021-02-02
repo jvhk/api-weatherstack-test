@@ -13,11 +13,14 @@ app.use(express.static('/public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
 
-
 //const url = `http://api.weatherstack.com/current?access_key=${params.access_key}&query=${params.query}`;
 
-app.get('/', function (req,res) { 
-  axios.post
+app.get('/', function (req,res) {
+    res.render('index') 
+});
+
+/*
+
   let cidade = req.body.cidade;
   let pais = req.body.pais;
   console.log("cidade pelo body parser: " + cidade);
@@ -37,19 +40,39 @@ app.get('/', function (req,res) {
       //console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
       console.log(apiResponse.location.region);
       
-      app.get('/', function(req, res){ 
-        res.render('index', {apiResponse : apiResponse}); //passando os dados capturados na API pro front
-      });
-      
     }).catch(error => {
       console.log(error);
+    });
+
+    res.render('index', {apiResponse : {}});
+
+   
   });
   
 })
+*/
+
+app.post('views/info', function(req,res){
+    
+    try{
+        //let cidade = req.body.cidade;
+        //let pais = req.body.pais; 
+
+        res.send(req.body);
+
+    }catch(error){
+      console.log(error);
+    }
+
+});
+
+
+
 
 app.listen(3000, function(){
   console.log("Rodando server na porta 3000");
 });
+
 
 //axios.get('https://api.weatherstack.com/current', {params})
 
